@@ -40,7 +40,7 @@ Bootstrap5(app)
 db = SQLAlchemy(model_class=Base)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DB_URI')
 db.init_app(app)
-app.config['UPLOADED_PHOTOS_DEST'] = os.path.join(basedir, 'uploads')
+#app.config['UPLOADED_PHOTOS_DEST'] = os.path.join(basedir, 'uploads')
 migrate = Migrate(app, db)
 
 photos = UploadSet('photos', IMAGES)
