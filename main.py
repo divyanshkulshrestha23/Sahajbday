@@ -27,7 +27,7 @@ This will install the packages from requirements.txt for this project.
 '''
 
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+#basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Base(DeclarativeBase):
