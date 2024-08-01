@@ -89,7 +89,7 @@ class Memories1(db.Model):
 # CREATE FORM
 class MemoryForm(FlaskForm):
     Title = StringField("Your Memory Title", validators=[DataRequired()])
-    Description = StringField("What made that moment memorable?", validators=[DataRequired()])
+    Description = TextAreaField("What made that moment memorable?", validators=[DataRequired()])
     Review = StringField("Something memorable from the moment eg. something that was said or something they did",
                          validators=[DataRequired()])
     Rating = StringField("Rate this memory out of 10 (yes, this is a competition)", validators=[DataRequired()])
@@ -130,7 +130,7 @@ def update():
     memorySelected = db.get_or_404(Memories1, memoryID)
     if form.validate_on_submit():
         memorySelected.rating = form.Rating.data
-        memorySelected.description = form.description.data
+        memorySelected.description = form.Description.data
         memorySelected.title = form.Title.data
         memorySelected.review = form.Review.data
         db.session.commit()
